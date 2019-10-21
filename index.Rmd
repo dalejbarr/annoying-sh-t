@@ -1,0 +1,19 @@
+---
+title: "Annoying Sh*t That I Figured Out and Will Soon Forget"
+author: "Various"
+output: 
+  html_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Moodle
+
+### Adding Extra Time to an Assignment for Specific Users
+
+After creating the assignment, go to "Edit" and then "User Overrides". 
+
+*Oct 21, 2019, -DJB*
