@@ -1,0 +1,7 @@
+# R
+
+## When Mac/Safari messes with your RMarkdown download
+
+* Use Google Chrome instead of Safari to download the file. Learn to use the friggin' Finder.
+
+*October 21, 2019 -DB*
