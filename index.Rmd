@@ -29,12 +29,12 @@ This book is for staff at the Institute of Neuroscience and Psychology / School 
 
 3. Stew in your annoyance at hard-to-learn-easy-to-forget trivial sh*t until your brain reminds you of this resource.
 
-4. Fork and clone the repository if you haven't already. If you have, pull to update your copy.
+4. Fork and clone [the repository](https://github.com/dalejbarr/annoying-sh-t) if you haven't already. If you have, pull to update your copy.
 
 5. Find the RMarkdown file for your topic or create one if it doesn't exist. Add your entry, and put your name and the date below it in italics.
 
 6. Commit your changes, push to your fork, and then submit a pull request. Once the pull request is accepted, the book will be re-rendered and the website will be updated.
 
-7. Remind yourself to look here the next time you encounter annoying shit.
+7. Remind yourself that this resource is called `annoying-sh-t` so you'll be more likely to remember it the next time you encounter annoying sh*t.
 
 8. Bask in the momentary glory of knowing that you've saved others and your future self time and headaches.
