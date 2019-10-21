@@ -31,7 +31,7 @@ This book is for staff at the Institute of Neuroscience and Psychology / School 
 
 5. Open this page and find the chapter with your topic in the floating table of contents. If it doesn't exist, ask Dale to make the chapter.
 
-6. If you're not comfortable with git, click the edit icon at the top of the page. This will lead you to the source RMarkdown file in [the repository](https://github.com/dalejbarr/annoying-sh-t) where you can enter details about your annoying thing. Below your entry put your name and the date below it in italics (put an asterisk before and after the text.) Fancy people can do these stages by forking and cloning the repo, committing updates and submitting a pull request. Once your changes have been accepted, the book will be re-rendered and the website will be updated.
+6. If you just have a quick edit or are not comfortable with git, click the edit icon in the title bar at the top of the page. This will lead you to the source RMarkdown file in [the repository](https://github.com/dalejbarr/annoying-sh-t) where you can enter details about your annoying thing. Below your entry put your name and the date below it in italics (put an asterisk before and after the text.) Fancy people can do these stages by forking and cloning the repo, committing updates and submitting a pull request. Once your changes have been accepted, the book will be re-rendered and the website will be updated.
 
 7. Remind yourself that this resource is called `annoying-sh-t` so you'll be more likely to remember it the next time you encounter annoying sh*t.
 
