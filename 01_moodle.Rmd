@@ -1,0 +1,7 @@
+# Moodle
+
+## Adding Extra Time to an Assignment for Specific Users
+
+After creating the assignment, go to "Edit" and then "User Overrides". 
+
+*Oct 21, 2019, -DJB*

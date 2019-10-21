@@ -1,19 +1,40 @@
 ---
-title: "Annoying Sh*t That I Figured Out and Will Soon Forget"
-author: "Various"
-output: 
-  html_document:
-    toc: true
+title: "Annoying Sh*t That I Figured Out But Will Soon Forget"
+author: "Dale Barr"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+github-repo: dalejbarr/annoying-sh-t
+description: "As it says on the tin."
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Moodle
+# About this book
 
-### Adding Extra Time to an Assignment for Specific Users
+## Audience
 
-After creating the assignment, go to "Edit" and then "User Overrides". 
+This book is for staff at the Institute of Neuroscience and Psychology / School of Psychology at the University of Glasgow. Any opinions expressed herein do not reflect those of the Institute or School, or the University of Glasgow.
 
-*Oct 21, 2019, -DJB*
+## How it works
+
+1. Figure out how to do something that you probably figured out many times before and forgot. (I take a generous view of what it means to "figure something out": if you ask someone and they tell you, that counts.)
+
+2. Get annoyed at how difficult it was to figure out how to do the thing that you probably once knew and then forgot.
+
+3. Wish that you had a reliable way to keep track of such things.
+
+3. Stew in your annoyance at hard-to-learn-easy-to-forget trivial sh*t until your brain reminds you of this resource.
+
+4. Fork and clone the repository if you haven't already. If you have, pull to update your copy.
+
+5. Find the RMarkdown file for your topic or create one if it doesn't exist. Add your entry, and put your name and the date below it in italics.
+
+6. Commit your changes, push to your fork, and then submit a pull request. Once the pull request is accepted, the book will be re-rendered and the website will be updated.
+
+7. Remind yourself to look here the next time you encounter annoying shit.
+
+8. Bask in the momentary glory of knowing that you've saved others and your future self time and headaches.
