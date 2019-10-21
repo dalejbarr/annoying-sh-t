@@ -5,3 +5,5 @@
 Do this before you schedule any events.
 
 * Access the 'secret' events page at <https://www.psy.gla.ac.uk/events/calendar.php>.
+
+*October 21, 2019 -DB*
