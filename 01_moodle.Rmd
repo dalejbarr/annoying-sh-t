@@ -5,3 +5,9 @@
 After creating the assignment, go to "Edit" and then "User Overrides". 
 
 *Oct 21, 2019, -DJB*
+
+## Link Anonymous Assignment IDs to Student IDs
+
+On the main page for the course, click on the Settings (cog icon), select `More...`. Under **Course Administration** click the **Reports** tab, then select **Assignment submission report**. From that point on it should be straightforward.
+
+*Nov 18, 2019, -DJB*
