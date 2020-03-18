@@ -135,7 +135,7 @@ That is because the Scale column contains all 22 points in the UofG scale. You s
 
 You might want to provide feedback to your students. The procedure for doing this offline is as follows: Create a directory with subfolders *identically matching* the structure of the subfolder containing all the submissions; for instance, a folder named 'feedback' with this structure:
 
-![](img/moodle_ass_sub.png)
+![](img/moodle_ass_subtypes.png)
 
 An easy way to do this is to just copy the subfolders into a the new 'feedback' folder, and then to go in and delete all of the submission files from the individual subfolders.
 
