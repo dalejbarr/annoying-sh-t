@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Adding and configuring a new assignment | Annoying Sh*t That I Figured Out But Will Soon Forget</title>
+  <meta name="description" content="As it says on the tin." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Adding and configuring a new assignment | Annoying Sh*t That I Figured Out But Will Soon Forget" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="As it says on the tin." />
+  <meta name="github-repo" content="dalejbarr/annoying-sh-t" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Adding and configuring a new assignment | Annoying Sh*t That I Figured Out But Will Soon Forget" />
+  
+  <meta name="twitter:description" content="As it says on the tin." />
+  
+
+<meta name="author" content="Dale Barr" />
+
+
+<meta name="date" content="2020-03-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="moodle-timed-assignments-and-exams.html"/>
+<link rel="next" href="r.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Annoying Sh*t</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About this book</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#audience"><i class="fa fa-check"></i><b>1.1</b> Audience</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#how-it-works"><i class="fa fa-check"></i><b>1.2</b> How it works</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="moodle-timed-assignments-and-exams.html"><a href="moodle-timed-assignments-and-exams.html"><i class="fa fa-check"></i><b>2</b> Moodle: Timed assignments and exams</a></li>
+<li class="chapter" data-level="3" data-path="adding-and-configuring-a-new-assignment.html"><a href="adding-and-configuring-a-new-assignment.html"><i class="fa fa-check"></i><b>3</b> Adding and configuring a new assignment</a><ul>
+<li class="chapter" data-level="3.1" data-path="adding-and-configuring-a-new-assignment.html"><a href="adding-and-configuring-a-new-assignment.html#adding-extra-time-to-an-assignment-for-specific-users"><i class="fa fa-check"></i><b>3.1</b> Adding Extra Time to an Assignment for Specific Users</a></li>
+<li class="chapter" data-level="3.2" data-path="adding-and-configuring-a-new-assignment.html"><a href="adding-and-configuring-a-new-assignment.html#link-anonymous-assignment-ids-to-student-ids"><i class="fa fa-check"></i><b>3.2</b> Link Anonymous Assignment IDs to Student IDs</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>4</b> R</a><ul>
+<li class="chapter" data-level="4.1" data-path="r.html"><a href="r.html#when-macsafari-messes-with-your-rmarkdown-download"><i class="fa fa-check"></i><b>4.1</b> When Mac/Safari messes with your RMarkdown download</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="eventscalendar.html"><a href="eventscalendar.html"><i class="fa fa-check"></i><b>5</b> Events/Calendar</a><ul>
+<li class="chapter" data-level="5.1" data-path="eventscalendar.html"><a href="eventscalendar.html#find-out-what-events-are-going-on"><i class="fa fa-check"></i><b>5.1</b> Find out what events are going on</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Annoying Sh*t That I Figured Out But Will Soon Forget</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="adding-and-configuring-a-new-assignment" class="section level1">
+<h1><span class="header-section-number">3</span> Adding and configuring a new assignment</h1>
+<p>On your Moodle course page, click on the cog symbol in the top right and then from the pull-down menu, choose “Turn editing on”.</p>
+<p><img src="img/moodle_ass_cog.png" /></p>
+<p>You will see your course page divided up into sections. Scroll down to the relevant section and find the link named <strong>“+ Add an activity or resource”</strong> at the bottom of that section. Once you click this link, a pop-up dialog will appear allowing you to choose the activity type. Choose Assignment.</p>
+<p><img src="img/moodle_add_ass.png" /></p>
+<div id="adding-extra-time-to-an-assignment-for-specific-users" class="section level2">
+<h2><span class="header-section-number">3.1</span> Adding Extra Time to an Assignment for Specific Users</h2>
+<p>After creating the assignment, go to “Edit” and then “User Overrides”.</p>
+<p><em>Oct 21, 2019, -DJB</em></p>
+</div>
+<div id="link-anonymous-assignment-ids-to-student-ids" class="section level2">
+<h2><span class="header-section-number">3.2</span> Link Anonymous Assignment IDs to Student IDs</h2>
+<p>On the main page for the course, click on the Settings (cog icon), select <code>More...</code>. Under <strong>Course Administration</strong> click the <strong>Reports</strong> tab, then select <strong>Assignment submission report</strong>. From that point on it should be straightforward.</p>
+<p><em>Nov 18, 2019, -DJB</em></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="moodle-timed-assignments-and-exams.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/dalejbarr/annoying-sh-t/edit/master/01_moodle.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
