@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Events/Calendar | Annoying Sh*t That I Figured Out But Will Soon Forget</title>
+  <title>3 Moodle: Customized assignments | Annoying Sh*t That I Figured Out But Will Soon Forget</title>
   <meta name="description" content="As it says on the tin." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Events/Calendar | Annoying Sh*t That I Figured Out But Will Soon Forget" />
+  <meta property="og:title" content="3 Moodle: Customized assignments | Annoying Sh*t That I Figured Out But Will Soon Forget" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="dalejbarr/annoying-sh-t" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Events/Calendar | Annoying Sh*t That I Figured Out But Will Soon Forget" />
+  <meta name="twitter:title" content="3 Moodle: Customized assignments | Annoying Sh*t That I Figured Out But Will Soon Forget" />
   
   <meta name="twitter:description" content="As it says on the tin." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="r.html"/>
-
+<link rel="prev" href="moodle-timed-assignments-and-exams.html"/>
+<link rel="next" href="r.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -183,15 +183,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="eventscalendar" class="section level1">
-<h1><span class="header-section-number">5</span> Events/Calendar</h1>
-<div id="find-out-what-events-are-going-on" class="section level2">
-<h2><span class="header-section-number">5.1</span> Find out what events are going on</h2>
-<p>Do this before you schedule any events.</p>
-<ul>
-<li>Access the ‘secret’ events page at <a href="https://www.psy.gla.ac.uk/events/calendar.php" class="uri">https://www.psy.gla.ac.uk/events/calendar.php</a>.</li>
-</ul>
-<p><em>October 21, 2019 -DB</em></p>
+<div id="moodle-customized-assignments" class="section level1">
+<h1><span class="header-section-number">3</span> Moodle: Customized assignments</h1>
+<p>This guide shows how to create assignments where each participant receives a ‘customized’ assignment tailored to that student.</p>
+<p>This is a total <strong>HACK</strong> of Moodle. Students are delivered their assignment via the ‘Feedback Files’ section of an assignment.</p>
+<div id="set-up-a-new-assignment" class="section level2">
+<h2><span class="header-section-number">3.1</span> Set up a new assignment</h2>
+<p>Under <em>Feedback types</em> select only “Feedback files”.</p>
+<p>Under <em>Common module settings</em> select “Hide from students” so that students cannot see it while you are configuring it. You can show it to students when it is completed.</p>
+</div>
+<div id="upload-feedback-files" class="section level2">
+<h2><span class="header-section-number">3.2</span> Upload feedback files</h2>
+<p>We are going to upload the assignments as ‘feedback files’ for the assignment you just created. But first we have to get the student identities through the ‘Assignment submission report.’</p>
+<p>On the course page, click the cog icon at the top, and select “More…”.</p>
+<p>Under course administration, go to the “Reports” tab and select “Assignment submission report.” Find the assignment and click “Export”. This gives you a spreadsheet with all of the unique Participant IDs used in blind marking.</p>
+<p>You will need to create a subdirectory that itself contains one subdirectory per student (participant) with the student folders labeled using the convention <code>Participant_102230754_assignsubmission_file_</code>. Here is an R script with a function <code>feedback_folders()</code> that will do this for you based on the participant IDs in the file you just downloaded (<code>assign.xlsx</code>).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">feedback_folders &lt;-<span class="st"> </span><span class="cf">function</span>(assign_file, <span class="dt">subdir =</span> <span class="st">&quot;feedback_folders&quot;</span>,</a>
+<a class="sourceLine" id="cb1-2" title="2">                             <span class="dt">overwrite =</span> <span class="ot">FALSE</span>) {</a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="cf">if</span> (<span class="kw">dir.exists</span>(subdir)) {</a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="cf">if</span> (<span class="op">!</span>overwrite) {</a>
+<a class="sourceLine" id="cb1-5" title="5">      <span class="kw">stop</span>(<span class="st">&quot;&#39;&quot;</span>, subdir, <span class="st">&quot;&#39; exists and overwrite is FALSE&quot;</span>)</a>
+<a class="sourceLine" id="cb1-6" title="6">    } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb1-7" title="7">      <span class="kw">unlink</span>(subdir, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb1-8" title="8">    }</a>
+<a class="sourceLine" id="cb1-9" title="9">  }</a>
+<a class="sourceLine" id="cb1-10" title="10">  <span class="kw">dir.create</span>(subdir)</a>
+<a class="sourceLine" id="cb1-11" title="11"></a>
+<a class="sourceLine" id="cb1-12" title="12">  dat &lt;-<span class="st"> </span>readxl<span class="op">::</span><span class="kw">read_excel</span>(assign_file, <span class="dt">skip =</span> 3L)</a>
+<a class="sourceLine" id="cb1-13" title="13">  fnames &lt;-<span class="st"> </span><span class="kw">sapply</span>(dat[[<span class="st">&quot;Username&quot;</span>]], <span class="cf">function</span>(.x) {</a>
+<a class="sourceLine" id="cb1-14" title="14">    <span class="kw">paste0</span>(<span class="kw">sub</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">s&quot;</span>, <span class="st">&quot;_&quot;</span>, .x), <span class="st">&quot;_assignsubmission_file_&quot;</span>)</a>
+<a class="sourceLine" id="cb1-15" title="15">  })</a>
+<a class="sourceLine" id="cb1-16" title="16"></a>
+<a class="sourceLine" id="cb1-17" title="17">  <span class="kw">lapply</span>(fnames, <span class="cf">function</span>(.x) {</a>
+<a class="sourceLine" id="cb1-18" title="18">    <span class="kw">dir.create</span>(<span class="kw">file.path</span>(subdir, .x))</a>
+<a class="sourceLine" id="cb1-19" title="19">  })</a>
+<a class="sourceLine" id="cb1-20" title="20">  <span class="ot">NULL</span></a>
+<a class="sourceLine" id="cb1-21" title="21">}</a></code></pre></div>
+<p>Put each student’s individual assignment in the corresponding folder. Then make a ZIP archive of all of these subfolders.</p>
+<p>In the course Moodle page, click on the link for the assignment you just created, and then choose “View all submissions.” Then under Grading Action choose “Upload multiple feedback files in a zip.”</p>
 
 </div>
 </div>
@@ -200,8 +229,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="r.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="moodle-timed-assignments-and-exams.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -232,7 +261,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/dalejbarr/annoying-sh-t/edit/master/03_Calendar_and_Events.Rmd",
+"link": "https://github.com/dalejbarr/annoying-sh-t/edit/master/011_moodle-customized-assignments.Rmd",
 "text": "Edit"
 },
 "history": {
