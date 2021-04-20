@@ -24,7 +24,7 @@
 <meta name="author" content="Dale Barr" />
 
 
-<meta name="date" content="2020-10-17" />
+<meta name="date" content="2021-04-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -185,12 +185,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="moodle-customized-assignments" class="section level1">
 <h1><span class="header-section-number">3</span> Moodle: Customized assignments</h1>
+<style>
+div.note { background-color:#e6f0ff; border-radius: 5px; padding: 20px; }
+</style>
 <p>This guide shows how to create assignments where each participant receives a ‘customized’ assignment tailored to that student.</p>
 <p>This is a total <strong>HACK</strong> of Moodle. Students are delivered their assignment via the ‘Feedback Files’ section of an assignment.</p>
 <div id="set-up-a-new-assignment" class="section level2">
 <h2><span class="header-section-number">3.1</span> Set up a new assignment</h2>
 <p>Under <em>Feedback types</em> select only “Feedback files”.</p>
 <p>Under <em>Common module settings</em> select “Hide from students” so that students cannot see it while you are configuring it. You can show it to students when it is completed.</p>
+<div class="note">
+<p>You should also set up the activity to “Manage Workflow”, because that will prevent the exam from showing up in the Gradebook before it is released to students.</p>
+</div>
 </div>
 <div id="upload-feedback-files" class="section level2">
 <h2><span class="header-section-number">3.2</span> Upload feedback files</h2>

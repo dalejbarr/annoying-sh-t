@@ -1,5 +1,9 @@
 # Moodle: Customized assignments
 
+<style>
+div.note { background-color:#e6f0ff; border-radius: 5px; padding: 20px; }
+</style>
+
 This guide shows how to create assignments where each participant receives a 'customized' assignment tailored to that student.
 
 This is a total **HACK** of Moodle. Students are delivered their assignment via the 'Feedback Files' section of an assignment.
@@ -9,6 +13,10 @@ This is a total **HACK** of Moodle. Students are delivered their assignment via 
 Under *Feedback types* select only "Feedback files".
 
 Under *Common module settings* select "Hide from students" so that students cannot see it while you are configuring it. You can show it to students when it is completed.
+
+<div class="note">
+You should also set up the activity to "Manage Workflow", because that will prevent the exam from showing up in the Gradebook before it is released to students.
+</div>
 
 ## Upload feedback files
 
