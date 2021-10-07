@@ -19,6 +19,7 @@ link-anonymous-assignment-ids-to-student-ids
 moodle-customized-assignments
 set-up-a-new-assignment
 upload-feedback-files
+release-the-exam
 r
 when-macsafari-messes-with-your-rmarkdown-download
 eventscalendar

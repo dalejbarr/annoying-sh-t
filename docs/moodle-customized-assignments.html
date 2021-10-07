@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Moodle: Customized assignments | Annoying Sh*t That I Figured Out But Will Soon Forget</title>
   <meta name="description" content="As it says on the tin." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Moodle: Customized assignments | Annoying Sh*t That I Figured Out But Will Soon Forget" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Dale Barr" />
 
 
-<meta name="date" content="2021-08-23" />
+<meta name="date" content="2021-10-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="moodle-timed-assignments-and-exams.html"/>
 <link rel="next" href="r.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -159,6 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="moodle-customized-assignments.html"><a href="moodle-customized-assignments.html"><i class="fa fa-check"></i><b>3</b> Moodle: Customized assignments</a><ul>
 <li class="chapter" data-level="3.1" data-path="moodle-customized-assignments.html"><a href="moodle-customized-assignments.html#set-up-a-new-assignment"><i class="fa fa-check"></i><b>3.1</b> Set up a new assignment</a></li>
 <li class="chapter" data-level="3.2" data-path="moodle-customized-assignments.html"><a href="moodle-customized-assignments.html#upload-feedback-files"><i class="fa fa-check"></i><b>3.2</b> Upload feedback files</a></li>
+<li class="chapter" data-level="3.3" data-path="moodle-customized-assignments.html"><a href="moodle-customized-assignments.html#release-the-exam"><i class="fa fa-check"></i><b>3.3</b> Release the exam</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>4</b> R</a><ul>
 <li class="chapter" data-level="4.1" data-path="r.html"><a href="r.html#when-macsafari-messes-with-your-rmarkdown-download"><i class="fa fa-check"></i><b>4.1</b> When Mac/Safari messes with your RMarkdown download</a></li>
@@ -195,13 +196,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.note { background-color:#e6f0ff; border-radius: 5px; padding: 20px; }
 </style>
 <p>This guide shows how to create assignments where each participant receives a ‘customized’ assignment tailored to that student.</p>
-<p>This is a total <strong>HACK</strong> of Moodle. Students are delivered their assignment via the ‘Feedback Files’ section of an assignment.</p>
+<p>This is a total <strong>HACK</strong> of Moodle. Students are delivered their assignment via the ‘Feedback Files’ section of an assignment. You then manually switch the marking workflow to ‘release’ the feedback files (i.e., exam papers) to students when the exam begins.</p>
 <div id="set-up-a-new-assignment" class="section level2">
 <h2><span class="header-section-number">3.1</span> Set up a new assignment</h2>
 <p>Under <em>Feedback types</em> select only “Feedback files”.</p>
 <p>Under <em>Common module settings</em> select “Hide from students” so that students cannot see it while you are configuring it. You can show it to students when it is completed.</p>
 <div class="note">
-<p>You should also set up the activity to “Manage Workflow”, because that will prevent the exam from showing up in the Gradebook before it is released to students.</p>
+<p><strong>IMPORTANT</strong>: Set up the activity with “Marking Workflow = Yes”, otherwise the exam will be visible to students in the Gradebook before the exam period.</p>
 </div>
 </div>
 <div id="upload-feedback-files" class="section level2">
@@ -233,6 +234,20 @@ div.note { background-color:#e6f0ff; border-radius: 5px; padding: 20px; }
 <a class="sourceLine" id="cb1-21" title="21">}</a></code></pre></div>
 <p>Put each student’s individual assignment in the corresponding folder. Then make a ZIP archive of all of these subfolders.</p>
 <p>In the course Moodle page, click on the link for the assignment you just created, and then choose “View all submissions.” Then under Grading Action choose “Upload multiple feedback files in a zip.”</p>
+</div>
+<div id="release-the-exam" class="section level2">
+<h2><span class="header-section-number">3.3</span> Release the exam</h2>
+<p>At the exam start time, you have to release the feedback files so that students can access them. You could either just go into edit settings and change Marking Workflow to “No” and save the changes (easy, but not recommended by our teaching admin staff because it is not ‘auditable’). So here is the way they recommend instead.</p>
+<p>Click on the assignment and go to “View all submissions”.</p>
+<p>Now select all of the assignments by clicking the checkbox in the header row (see below).</p>
+<div class="figure">
+<img src="img/dumb_checkbox.png" alt="screenshot of Moodle showing where to click the ‘select all’ button" />
+<p class="caption">screenshot of Moodle showing where to click the ‘select all’ button</p>
+</div>
+<p>Go to the bottom of the screen and find the drop down box <em>With selected…</em> and select <em>Set marking workflow state</em>. Click Go and the OK in the popup box.</p>
+<p>You will see a screen that says “Set marking workflow state for XXX users.”</p>
+<p>At the bottom of that screen, there is a dropdown titled “Marking workflow state.” Set this to Released, and leave Notify students at “No”. Save changes.</p>
+<p>The exam paper will now be available to students.</p>
 
 </div>
 </div>
@@ -286,6 +301,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "lunr",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
